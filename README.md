@@ -1,2 +1,2 @@
 # RadioPlay
-https://radioplay.pp.ua
+https://play.zone.id
