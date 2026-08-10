@@ -8,8 +8,8 @@ ID=x-radio, X-Radio, https://play.zone.id/images/x_radio.webp, https://giss.tv:6
 ID=ibiza-plus, Ibiza Plus, https://play.zone.id/images/x_radio_ibiza.webp, https://radio.nitro-server.uk/listen/ibizaplus/radio.mp3, https://scraper.onlineradiobox.com/es.xonelovehits
 ID=trance-is-star, Trance is Star, https://play.zone.id/images/trance_is_star.webp, https://myradio24.org/tisradio, https://scraper.onlineradiobox.com/ua.tranceisstar
 ID=misto-nad-bugom, Місто над бугом, https://play.zone.id/images/misto_nad_bugom.webp, https://stream.mistonadbugom.com.ua/radiomistonadbugom, https://scraper.onlineradiobox.com/ua.mistonadbugom
-ID=svit-fm, Світ FM, https://play.zone.id/images/svit_fm.webp, https://tune.tunzilla.com/http://195.234.148.52:8000/;stream.mp3, https://scraper.onlineradiobox.com/ua.svit
-ID=zakarpattya-fm, Закарпаття FM, https://play.zone.id/images/zakarpattya_fm.webp, https://tune.tunzilla.com/http://195.234.148.51:8000/;stream.mp3, https://scraper.onlineradiobox.com/ua.zakarpattya
+ID=svit-fm, Світ FM, https://play.zone.id/images/svit_fm.webp, https://ssl.surfmusic.de/s.php?s=http://195.234.148.52:8000/stream, https://scraper.onlineradiobox.com/ua.svit
+ID=zakarpattya-fm, Закарпаття FM, https://play.zone.id/images/zakarpattya_fm.webp, https://ssl.surfmusic.de/s.php?s=http://195.234.148.51:8000/stream, https://scraper.onlineradiobox.com/ua.zakarpattya
 ID=radio-7, Radio 7, https://play.zone.id/images/radio7.webp, https://media2.streambrothers.com:8034/stream
 ID=zahid-fm,Захід FM+, https://play.zone.id/images/zfm.webp, https://radio.zfm.com.ua:8443/zfm, https://scraper.onlineradiobox.com/ua.zfm
 ID=halychyna, Галичина FM, https://play.zone.id/images/galychyna_fm.webp, https://stream320.galychyna.fm/WebSite
@@ -25,7 +25,7 @@ ID=lux-fm-ukraine-hits, Люкс FM Українські Хіти, https://play.
 ID=lux-fm-chill, Люкс FM Chill & Lounge, https://play.zone.id/images/lux_fm_chill.webp, https://icecast.luxnet.ua/chill-hd-mp3
 ID=chillout-fm, Chillout FM, https://play.zone.id/images/chillout_fm.webp, https://icecast.luxnet.ua/chillout-fm-hd-mp3
 ID=zabava-fm, Забава FM, https://play.zone.id/images/zabava_fm.webp, https://icecast.luxnet.ua/radio-zabava-hd-mp3
-ID=love-fm, Love FM, https://play.zone.id/images/love_fm.webp, https://icecast.luxnet.ua/love-fm-hd
+ID=love-fm, Love FM, https://play.zone.id/images/love_fm.webp, https://icecast.luxnet.ua/love-fm-hd-mp3
 ID=k-pop-24, K-Pop 24, https://play.zone.id/images/k_pop_24.webp, https://icecast.luxnet.ua/k-pop-hd-mp3
 ID=rock-24, Rock 24, https://play.zone.id/images/rock_24.webp, https://icecast.luxnet.ua/rock-24-hd-mp3
 ID=dance-fm, Dance FM, https://play.zone.id/images/dance_fm.webp, https://icecast.luxnet.ua/dance-fm-hd-mp3
