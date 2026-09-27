@@ -17,6 +17,7 @@ ID=lvivska-hvylya, Львівська Хвиля, https://play.zone.id/images/lv
 ID=ternopilska-hvylya, Тернопільська Хвиля, https://play.zone.id/images/ternopil_fm.webp, https://onair.lviv.fm:8443/ternopil.fm.hd
 ID=lux-fm, Люкс FM, https://play.zone.id/images/lux_fm.webp, https://icecast.luxnet.ua/lux_adv_hd
 ID=lux-fm-lviv, Люкс FM Львів, https://play.zone.id/images/lux_fm_lviv.webp, https://icecast.luxnet.ua/lux-lviv-hd-mp3
+ID=lux-fm-latino, Люкс FM Latino, https://play.zone.id/images/lux_fm_latino.webp, https://icecast.luxnet.ua/lux-fm-latino-hd-mp3
 ID=lux-fm-sport, Люкс FM Sport, https://play.zone.id/images/lux_fm_sport.webp, https://icecast.luxnet.ua/lux-fm-sport-hd-mp3
 ID=lux-fm-dance, Люкс FM Dance, https://play.zone.id/images/lux_fm_dance.webp, https://icecast.luxnet.ua/lux-fm-dance-hd-mp3
 ID=lux-fm-golden-hits, Люкс FM Золоті Хіти, https://play.zone.id/images/lux_fm_golden_hits.webp, https://icecast.luxnet.ua/zoloti-hiti-hd-mp3
