@@ -114,6 +114,7 @@ ID=radio-kardan, Радіо Кардан, https://play.zone.id/images/radio_kard
 ID=shliaher-fm, Шлягер FM, https://play.zone.id/images/shlager_fm.webp, https://cast.brg.ua/shanson_main_public_mp3_hq
 ID=perets-fm, Перець FM, https://play.zone.id/images/perec_fm.webp, https://radio.perec.fm/radio-stilnoe, https://scraper.onlineradiobox.com/ua.stilnoe.fm
 ID=perets-fm-romantique, Перець FM Romantique, https://play.zone.id/images/perec_fm.webp, https://radio.perec.fm/romantique
+ID=business-radio, Бізнес Радіо, https://play.zone.id/images/business_radio.webp, https://cast.brg.ua/businessradio_main_public_mp3_hq
 ID=magic-radio, Magic Radio, https://play.zone.id/images/magic_radio.webp, https://cast.brg.ua/business_main_public_mp3_hq
 ID=power-fm, Power FM, https://play.zone.id/images/power_fm.webp, https://cast.brg.ua/powerfm_main_public_mp3_hq
 ID=radio-shanson, Radio Shanson, https://play.zone.id/images/radio_shanson.webp, https://cast.brg.ua/newshanson_main_public_mp3_hq
