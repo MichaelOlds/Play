@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Statpx Event Sender</title>
+
+  <!-- Statpx tracking -->
+  <script>window._stid='64d88925833d321a';window._stendpoint='https://statpx.com';</script>
+<script src="https://statpx.com/track.js" async data-cfasync="false"></script>
+  
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: Arial, sans-serif;
+      background: #f3f5f9;
+      color: #1f2937;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      padding: 28px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px #0000000d;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 24px;
+    }
+
+    p {
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      margin: 16px 0 7px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #4f46e5;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 24px;
+      padding: 13px;
+      border: 0;
+      border-radius: 8px;
+      background: #4f46e5;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #4338ca;
+    }
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: wait;
+    }
+
+    #status {
+      margin-top: 16px;
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .success {
+      color: #15803d;
+    }
+
+    .error {
+      color: #b91c1c;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <h1>Statpx Event Sender</h1>
+    <p>Введи дані та надішли custom event.</p>
+
+    <form id="eventForm">
+      <label for="country">Country</label>
+      <input
+        id="country"
+        name="country"
+        type="text"
+        placeholder="наприклад, UA"
+        required
+      >
+
+      <label for="name">Name</label>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        placeholder="наприклад, registration"
+        required
+      >
+
+      <label for="eventId">ID</label>
+      <input
+        id="eventId"
+        name="id"
+        type="text"
+        placeholder="наприклад, 12345"
+        required
+      >
+
+      <button id="sendButton" type="submit">
+        Надіслати
+      </button>
+
+      <div id="status" role="status" aria-live="polite"></div>
+    </form>
+  </main>
+
+  <script>
+    const form = document.getElementById("eventForm");
+    const button = document.getElementById("sendButton");
+    const status = document.getElementById("status");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const country = document.getElementById("country").value.trim();
+      const name = document.getElementById("name").value.trim();
+      const id = document.getElementById("eventId").value.trim();
+
+      if (!country || !name || !id) {
+        status.className = "error";
+        status.textContent = "Заповни всі поля.";
+        return;
+      }
+
+      if (typeof window._st !== "function") {
+        status.className = "error";
+        status.textContent =
+          "Statpx ще не завантажився. Спробуй ще раз.";
+        return;
+      }
+
+      try {
+        window._st(
+          "event",
+          "manual_event",
+          "manual_form",
+          null,
+          {
+            props: {
+              country: country,
+              name: name,
+              id: id
+            }
+          }
+        );
+
+        status.className = "success";
+        status.textContent =
+          "Команду відправлення події виконано.";
+      } catch (error) {
+        status.className = "error";
+        status.textContent =
+          "Помилка: " + error.message;
+      }
+    });
+  </script>
+</body>
+</html>
