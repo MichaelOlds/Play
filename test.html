@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Radio Events — statpx</title>
+
+  <!-- Вкажіть ID сайту зі свого кабінету statpx -->
+  <script>window._stid='64d88925833d321a';window._stendpoint='https://statpx.com';</script>
+<script src="https://statpx.com/track.js" async data-cfasync="false"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f4f5f7;
+      color: #222;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .station {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      background: #fff;
+      padding: 20px;
+      margin: 14px 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px #0000000d;
+    }
+
+    button {
+      padding: 10px 22px;
+      border: none;
+      border-radius: 8px;
+      background: #1677ff;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    button.stop {
+      background: #d32f2f;
+    }
+
+    #status {
+      padding: 14px;
+      margin-top: 20px;
+      background: white;
+      border-radius: 8px;
+    }
+
+    #log {
+      background: #171717;
+      color: #9cff9c;
+      padding: 14px;
+      border-radius: 8px;
+      font: 12px/1.6 monospace;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Radio Events Test</h1>
+
+  <div class="station">
+    <div>
+      <strong>SUN FM</strong><br>
+      <small>Country: ua</small><br>
+      <small>ID: sun-fm</small>
+    </div>
+    <button id="btn-sun-fm" onclick="toggleRadio('sun-fm')">
+      Play
+    </button>
+  </div>
+
+  <div class="station">
+    <div>
+      <strong>Hit FM</strong><br>
+      <small>Country: ua</small><br>
+      <small>ID: hit-fm</small>
+    </div>
+    <button id="btn-hit-fm" onclick="toggleRadio('hit-fm')">
+      Play
+    </button>
+  </div>
+
+  <div id="status">Статус: радіо зупинено</div>
+
+  <h3>Event log</h3>
+  <pre id="log">Очікування подій...</pre>
+
+  <script>
+    const stations = {
+      "sun-fm": {
+        country: "ua",
+        name: "SUN FM",
+        id: "sun-fm"
+      },
+      "hit-fm": {
+        country: "ua",
+        name: "Hit FM",
+        id: "hit-fm"
+      }
+    };
+
+    let activeStation = null;
+    let pageIsLeaving = false;
+
+    const statusElement = document.getElementById("status");
+    const logElement = document.getElementById("log");
+
+    function logEvent(eventName, station, message = "") {
+      const entry = {
+        event: eventName,
+        country: station.country,
+        name: station.name,
+        id: station.id,
+        timestamp: new Date().toISOString(),
+        ...(message ? { message } : {})
+      };
+
+      console.log("[statpx]", entry);
+
+      if (logElement) {
+        if (logElement.textContent === "Очікування подій...") {
+          logElement.textContent = "";
+        }
+
+        logElement.textContent += JSON.stringify(entry, null, 2) + "\n\n";
+      }
+    }
+
+    function sendRadioEvent(eventName, station) {
+      // Виклик реального трекера statpx.
+      if (typeof window._st !== "function") {
+        console.error(
+          "statpx tracker is not ready. Event:",
+          eventName,
+          station
+        );
+        logEvent(eventName, station, "Tracker unavailable");
+        return false;
+      }
+
+      try {
+        window._st(
+          "event",
+          eventName,
+          "radio",
+          null,
+          {
+            props: {
+              country: station.country,
+              name: station.name,
+              id: station.id
+            }
+          }
+        );
+
+        logEvent(eventName, station);
+        return true;
+      } catch (error) {
+        console.error("statpx event error:", error);
+        logEvent(eventName, station, "Tracker call failed");
+        return false;
+      }
+    }
+
+    function updateUI() {
+      Object.keys(stations).forEach(function (id) {
+        const button = document.getElementById("btn-" + id);
+        const playing = activeStation === id;
+
+        button.textContent = playing ? "Stop" : "Play";
+        button.classList.toggle("stop", playing);
+      });
+
+      statusElement.textContent = activeStation
+        ? "Статус: грає " + stations[activeStation].name
+        : "Статус: радіо зупинено";
+    }
+
+    function stopRadio() {
+      if (!activeStation) return;
+
+      const station = stations[activeStation];
+
+      // Спочатку очищуємо стан, щоб уникнути повторного stop.
+      activeStation = null;
+
+      sendRadioEvent("radio_stop", station);
+      updateUI();
+    }
+
+    function toggleRadio(id) {
+      if (pageIsLeaving) return;
+
+      if (activeStation === id) {
+        stopRadio();
+        return;
+      }
+
+      // Якщо грала інша станція, відправляємо її stop.
+      if (activeStation) {
+        stopRadio();
+      }
+
+      activeStation = id;
+
+      sendRadioEvent("radio_play", stations[id]);
+      updateUI();
+    }
+
+    // Закриття вкладки, перезавантаження або перехід зі сторінки.
+    window.addEventListener("pagehide", function () {
+      pageIsLeaving = true;
+
+      if (!activeStation) return;
+
+      const station = stations[activeStation];
+
+      // Не викликаємо stopRadio(), щоб не залежати від оновлення UI.
+      activeStation = null;
+      sendRadioEvent("radio_stop", station);
+    });
+  </script>
+</body>
+</html>
