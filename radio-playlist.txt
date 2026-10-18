@@ -4,9 +4,17 @@ ID=sun-fm-plus, SUN FM Плюс, https://play.zone.id/images/sun_fm_plus.webp, h
 ID=sun-fm-fresh, SUN FM Fresh, https://play.zone.id/images/sun_fm_fresh.webp, https://ec5.yesstreaming.net:3560/stream, https://scraper.onlineradiobox.com/ua.sunfresh
 ID=sun-fm-gold, SUN FM Gold, https://play.zone.id/images/sun_fm_gold.webp, https://ec5.yesstreaming.net:2590/stream, https://scraper.onlineradiobox.com/ua.sungold
 ID=sun-fm-rock, SUN FM Rock, https://play.zone.id/images/sun_fm_rock.webp, https://ec5.yesstreaming.net:3650/stream, https://scraper.onlineradiobox.com/ua.sunfmrock
+ID=trance-is-star, Trance is Star, https://play.zone.id/images/trance_is_star.webp, https://myradio24.org/tisradio, https://scraper.onlineradiobox.com/ua.tranceisstar
+ID=vol-dance, VOL DANCE, https://play.zone.id/images/vol_dance.webp, https://radio.voldance.xyz/listen/vol_dance_radio/radio.mp3, https://scraper.onlineradiobox.com/ua.voldance
+ID=vol-dance-ua-hits, VOL DANCE UA Hits, https://play.zone.id/images/vol_dance_ua_hits.webp, https://radio.voldance.xyz/listen/vol_dance_ukrainian_hits/radio.mp3, https://scraper.onlineradiobox.com/ua.voldanceukrainianhits
+ID=vol-dance-club, VOL DANCE Club, https://play.zone.id/images/vol_dance_club.webp, https://radio.voldance.xyz/listen/club/radio.mp3, https://scraper.onlineradiobox.com/ua.voldanceclub
+ID=vol-dance-melodic, VOL DANCE Melodic House & Techno, https://play.zone.id/images/vol_dance_melodic.webp, https://radio.voldance.xyz/listen/melteh/radio.mp3, https://scraper.onlineradiobox.com/ua.voldancemelodic
+ID=vol-dance-drum-and-bass, VOL DANCE Drum & Bass, https://play.zone.id/images/vol_dance_drum_and_bass.webp, https://radio.voldance.xyz/listen/drum/radio.mp3, https://scraper.onlineradiobox.com/ua.voldancedrumbass
+ID=vol-dance-modern-groove, VOL DANCE Modern Groove, https://play.zone.id/images/vol_dance_modern_groove.webp, https://radio.voldance.xyz/listen/indie/radio.mp3, https://scraper.onlineradiobox.com/ua.voldancemoderngroove
+ID=vol-dance-all-time, VOL DANCE Hits of All Times, https://play.zone.id/images/vol_dance_all_time.webp, https://radio.voldance.xyz/listen/alltimers/radio.mp3, https://scraper.onlineradiobox.com/ua.voldancehitsofalltimes
+ID=vol-dance-deep, VOL DANCE Deep, https://play.zone.id/images/vol_dance_deep.webp, https://radio.voldance.xyz/listen/deep/radio.mp3
 ID=x-radio, X-Radio, https://play.zone.id/images/x_radio.webp, https://giss.tv:666/xradio_channel.ogg, https://scraper.onlineradiobox.com/ua.radio
 ID=ibiza-plus, Ibiza Plus, https://play.zone.id/images/x_radio_ibiza.webp, https://radio.nitro-server.uk/listen/ibizaplus/radio.mp3, https://scraper.onlineradiobox.com/es.xonelovehits
-ID=trance-is-star, Trance is Star, https://play.zone.id/images/trance_is_star.webp, https://myradio24.org/tisradio, https://scraper.onlineradiobox.com/ua.tranceisstar
 ID=misto-nad-bugom, Місто над бугом, https://play.zone.id/images/misto_nad_bugom.webp, https://stream.mistonadbugom.com.ua/radiomistonadbugom, https://scraper.onlineradiobox.com/ua.mistonadbugom
 ID=svit-fm, Світ FM, https://play.zone.id/images/svit_fm.webp, https://ssl.surfmusic.de/s.php?s=http://195.234.148.52:8000/stream, https://scraper.onlineradiobox.com/ua.svit
 ID=zakarpattya-fm, Закарпаття FM, https://play.zone.id/images/zakarpattya_fm.webp, https://ssl.surfmusic.de/s.php?s=http://195.234.148.51:8000/stream, https://scraper.onlineradiobox.com/ua.zakarpattya
